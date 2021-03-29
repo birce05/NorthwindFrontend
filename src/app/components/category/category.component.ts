@@ -8,18 +8,18 @@ import { CategoryService } from 'src/app/services/category.service';
   styleUrls: ['./category.component.css']
 })
 export class CategoryComponent implements OnInit {
+  [x: string]: any;
   categories:Category[]=[];
-  constructor(private categoryService:CategoryService) { }
-
+  currentCategory: Category={categoryId:0,categoryName:""};
   ngOnInit(): void {
     this.getCategories();
   }
   getCategories() {
-    this.categoryService.getCategories().subscribe(response=>{
+    this.categoryService.getCategories().subscribe((response: { data: Category[]; }) =>{
       this.categories=response.data 
     })
   }
   setCurrencyCategory(category:Category){
-    console.log(category)
+    this.currentCategory=category
   }  
 }
