@@ -6,15 +6,14 @@ import { ProductService } from 'src/app/services/product.service';
 //axios,fetch kütüphane
 @Component({
   selector: 'app-product',
-  templateUrl:
- './product.component.html',
+  templateUrl:'./product.component.html',
   styleUrls: ['./product.component.css'],
 })
 export class ProductComponent implements OnInit {
   products: Product[] = [];
   dataLoaded=false;
-  getCategories: any; // bir an backend emetod ile düzelteceğiz sandım..ok frontende yazdığın burayı ilgilendirir yani burada tanımladığın componen.Ts dosyasında burayı ilgillendirir html dediğim 
- 
+  getCategories: any;  
+ filterText:string=""; //onu anla
   constructor(private productService:ProductService,
    private activatedRoute:ActivatedRoute) {}
 
