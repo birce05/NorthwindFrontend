@@ -1,10 +1,11 @@
-<li * ngfor="cartItems" class="nav-item dropdown">
+<li * ngfor="cartItems length>0" class="nav-item dropdown">
     <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
       Sepetiniz
     </a>
     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-      <li *ngFor = " let CartItem of cartItems" > <a 
-        class="dropdown-item" >{{CartItem.product.productName}}</a></li>
+      <li *ngFor = " let CartItem of cartItems" >  
+        <a class="dropdown-item" >
+        <span class="badge bg-secondary">{{CartItem.quantity}}</span>{{CartItem.product.productName}}</a></li>
       <li><hr class="dropdown-divider"></li>
       <li><a class="dropdown-item" >Sepete git</a></li>
     </ul>
