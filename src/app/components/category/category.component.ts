@@ -21,7 +21,7 @@ export class CategoryComponent implements OnInit {
       console.log(response);
     })
   }
-  setCurrencyCategory(category:Category){
+  setCurrentCategory(category:Category){
      this.currentCategory=category
   } 
   getClassCurrentCategory(category:Category){//
